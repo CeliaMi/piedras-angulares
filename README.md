@@ -70,7 +70,7 @@ piedras-angulares/
 ## Ejemplos de Personas a Incluir
 
 - Rosalind Franklin (Estructura del ADN)
-- Marie Curie (Radioactividad)
+- Hedy Lamarr (Comunicaciones inalámbricas)
 - Margaret Hamilton (Programación Apollo)
 - Lise Meitner (Fisión Nuclear)
 

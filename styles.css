@@ -190,11 +190,11 @@ main {
 }
 
 .card-front img {
-    transform: scale(2.5);
+    transform: scale(2);
 }
 
 .card:hover .card-front img {
-    transform: scale(2.7);
+    transform: scale(2.2);
     transition: transform 0.3s ease;
 }
 
@@ -358,12 +358,12 @@ footer {
     }
 
     .card-front img {
-        transform: scale(2.3);
+        transform: scale(1.8);
         object-position: center 30%;
     }
 
     .card:hover .card-front img {
-        transform: scale(2.5);
+        transform: scale(2);
     }
 
     .card h2 {
