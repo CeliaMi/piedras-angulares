@@ -6,6 +6,7 @@ Un proyecto para visibilizar a las personas clave detrás de los grandes descubr
 
 Este proyecto consiste en crear una página web que muestre tarjetas (cards) con información sobre descubrimientos importantes y las personas que los hicieron posibles. El objetivo es dar visibilidad a aquellas figuras que, a pesar de su contribución fundamental, no siempre han recibido el reconocimiento merecido.
 
+
 ## Estructura del Proyecto
 
 La página web debe incluir:
@@ -82,3 +83,28 @@ Ayudate de chatGPT para redactar tus textos y encontrar las personas adecuadas.
 - [CSS-Tricks](https://css-tricks.com/)
 - [Unsplash](https://unsplash.com/) (para imágenes)
 - [Google Fonts](https://fonts.google.com/)
+
+
+## Proceso de Votación y Nuevas Secciones
+
+Al finalizar, se realizará una votación para seleccionar los tres mejores proyectos que ser serán integrados a la web de Piedras Angulares como nuevas secciones. Cada participante, deberá:
+
+1. Preparar los siguientes archivos:
+   - Un archivo HTML con su sección
+   - Un archivo CSS con sus estilos
+   - Una carpeta con las imágenes necesarias
+
+2. Convenciones de nomenclatura ( solo aplicable a la versiones escogidas):
+   - Todas las clases CSS deben comenzar con sus tres iniciales
+   - Ejemplo: Para María López Fernández, las clases serían:
+     - `mlf-card-back`
+     - `mlf-card-front`
+     - `mlf-container`
+
+3. Estilo:
+   - Cada sección debe mantener su propio estilo visual
+   - Debe ser coherente con la temática elegida
+   - Debe ser responsive y accesible
+
+
+¿Comenzamos🚀?
