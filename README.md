@@ -87,7 +87,7 @@ Ayudate de chatGPT para redactar tus textos y encontrar las personas adecuadas.
 
 ## Proceso de Votación y Nuevas Secciones
 
-Al finalizar, se realizará una votación para seleccionar los tres mejores proyectos que ser serán integrados a la web de Piedras Angulares como nuevas secciones. Cada participante, deberá:
+Al finalizar, se realizará una votación para seleccionar los tres mejores proyectos que ser serán integrados a la web de Piedras Angulares como nuevas secciones. Cada persona seleccionada, deberá:
 
 1. Preparar los siguientes archivos:
    - Un archivo HTML con su sección
@@ -107,4 +107,4 @@ Al finalizar, se realizará una votación para seleccionar los tres mejores proy
    - Debe ser responsive y accesible
 
 
-¿Comenzamos🚀?
+## ¿Comenzamos🚀?
