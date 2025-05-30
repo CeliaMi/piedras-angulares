@@ -1,17 +1,34 @@
-/* Reset y variables */
+/* Variables y configuración base */
 :root {
+    /* Colores */
     --primary-color: #FF4700;
     --secondary-color: #00FFB2;
     --accent-color: #FF00E5;
     --text-color: #ffffff;
-    --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    --bg-color: #5b5b5b;
+    --card-bg: #1a1a1a;
+    
+    /* Sombras y efectos */
+    --card-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+    --text-shadow: 0.125rem 0.125rem 0.25rem rgba(0,0,0,0.5);
+    
+    /* Espaciado */
     --container-padding: 2rem;
     --mobile-margin: 1rem;
+    --card-gap: 0.5rem;
+    --card-margin: 0.2rem;
+    
+    /* Gradientes */
     --gradient-1: linear-gradient(45deg, #1a1a1a, #2d2d2d);
     --gradient-2: linear-gradient(45deg, #00FFB2, #FF4700);
-    --nav-bg: #323131;
+    
+    /* Tamaños base */
+    --container-max-width: 87.5rem;
+    --card-width: min(280px, 23vw);
+    --card-height: calc(var(--card-width) * 1.3);
 }
 
+/* Reset y estilos base */
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +41,7 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    background-color: #5b5b5b;
+    background-color: var(--bg-color);
 }
 
 /* Header y Navegación */
@@ -37,14 +54,13 @@ header {
 nav {
     background: var(--primary-color);
     padding: 1.5rem;
-    text-align: left;
     box-shadow: var(--card-shadow);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.2);
     display: flex;
     align-items: flex-end;
-    min-height: 100px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    min-height: 6.25rem;
+    backdrop-filter: blur(0.3125rem);
+    -webkit-backdrop-filter: blur(0.3125rem);
 }
 
 .nav-title {
@@ -55,25 +71,24 @@ nav {
 
 nav h1 {
     font-weight: 800;
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
     color: white;
-    letter-spacing: 2px;
-    margin: 0;
+    letter-spacing: 0.125rem;
     line-height: 1;
 }
 
 .main-subtitle {
     font-weight: 400;
-    font-size: 1.4rem;
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
     color: rgba(255, 255, 255, 0.9);
-    letter-spacing: 1px;
-    margin: 0 auto;
+    letter-spacing: 0.0625rem;
     line-height: 1.4;
     font-style: italic;
     text-align: center;
     padding: 0 2rem;
-    max-width: 800px;
+    max-width: 50rem;
     width: 100%;
+    margin: 0 auto;
 }
 
 .main-subtitle.question {
@@ -112,25 +127,26 @@ nav h2 {
 main {
     padding: var(--container-padding);
     width: 100%;
-    background-color: #5b5b5b;
 }
 
 .cards-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: var(--card-gap);
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    max-width: var(--container-max-width);
+    padding: 0 0.5rem;
 }
 
-/* Estilos de las tarjetas */
+/* Cards */
 .card {
-    width: 300px;
-    height: 400px;
+    width: var(--card-width);
+    height: var(--card-height);
     perspective: 1000px;
     cursor: pointer;
-    margin: 0.5rem;
+    margin: var(--card-margin);
 }
 
 .card-inner {
@@ -153,31 +169,28 @@ main {
     backface-visibility: hidden;
     overflow: hidden;
     box-shadow: var(--card-shadow);
-}
-
-.card-front {
-    background-color: #1a1a1a;
+    background-color: var(--card-bg);
 }
 
 .card-back {
     transform: rotateY(180deg);
-    background: #1a1a1a;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    position: relative;
 }
 
-.card-front img {
+.card-front img, .card-back img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center 30%;
     filter: brightness(0.9);
-    transform: scale(2.5);
     will-change: transform;
-    backface-visibility: hidden;
+}
+
+.card-front img {
+    transform: scale(2.5);
 }
 
 .card:hover .card-front img {
@@ -191,22 +204,18 @@ main {
     left: 0;
     right: 0;
     padding: 1.5rem 1rem 0.5rem;
-    font-size: 2.8rem;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
     font-weight: 900;
-    text-transform: none;
-    letter-spacing: -2px;
     color: white;
     background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.8) 50%, transparent 100%);
     margin: 0;
     line-height: 0.9;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: var(--text-shadow);
     text-align: left;
     width: 100%;
     white-space: normal;
     word-wrap: break-word;
     hyphens: auto;
-    display: block;
-    overflow: visible;
 }
 
 .card-back img {
@@ -259,7 +268,7 @@ main {
 
 .contribution {
     padding: 0.8rem;
-    font-size: 0.85rem;
+    font-size: clamp(0.8rem, 2vw, 0.85rem);
     line-height: 1.3;
     text-align: left;
     background: rgba(0, 0, 0, 0.6);
@@ -277,16 +286,15 @@ footer {
     box-shadow: var(--card-shadow);
 }
 
-/* Estilos del footer */
 .footer-content {
     margin: 0 auto;
     text-align: center;
-    max-width: 800px;
+    max-width: 50rem;
 }
 
 .footer-content p {
     margin-bottom: 1rem;
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
 }
 
 .footer-content a {
@@ -302,8 +310,8 @@ footer {
 }
 
 .logotype {
-    width: 9%;
-    height: 9%;
+    width: clamp(15%, 9vw, 9%);
+    height: auto;
     margin: 1rem auto;
     transition: transform 0.3s ease;
 }
@@ -319,122 +327,62 @@ footer {
 }
 
 /* Diseño responsive */
-@media (max-width: 768px) {
+/* Pantallas medianas (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
     :root {
-        --container-padding: 1rem;
-    }
-
-    .cards-container {
-        gap: 0.8rem;
-    }
-
-    .card {
-        width: 280px;
-        height: 380px;
-        margin: 0.3rem;
-    }
-
-    nav h1 {
-        font-size: 2rem;
-    }
-
-    .main-subtitle {
-        font-size: 1.2rem;
-        padding: 0 1.5rem;
-    }
-    
-    .main-subtitle:first-of-type {
-        margin: 1.5rem auto 1.2rem;
-    }
-    
-    .main-subtitle:nth-of-type(2) {
-        margin-bottom: 0.4rem;
-    }
-    
-    .main-subtitle:last-of-type {
-        margin-bottom: 2rem;
-    }
-
-    nav h2 {
-        font-size: 1rem;
-    }
-
-    .logotype {
-        width: 20%;
-    }
-
-    .card h2 {
-        font-size: 2.2rem;
-        padding: 1.2rem 0.8rem 0.4rem;
-        letter-spacing: -1px;
-    }
-
-    .card-back img {
-        height: 100%;
-    }
-
-    .contribution {
-        font-size: 0.8rem;
-        padding: 0.6rem;
+        --container-max-width: 90rem;
+        --card-width: min(220px, 23vw);
+        --card-gap: 0.4rem;
+        --container-padding: 1.2rem;
+        --card-margin: 0.1rem;
     }
 }
 
-@media (max-width: 480px) {
+/* Móviles grandes (576px - 991px) */
+@media (max-width: 991px) {
+    :root {
+        --container-padding: 1rem;
+        --card-width: min(260px, 45vw);
+        --card-gap: 0.5rem;
+        --card-margin: 0.2rem;
+    }
+}
+
+/* Móviles pequeños (hasta 575px) */
+@media (max-width: 575px) {
     :root {
         --container-padding: var(--mobile-margin);
+        --card-width: min(280px, 90vw);
+        --card-gap: 0.4rem;
+        --card-margin: 0.1rem;
     }
 
-    .cards-container {
-        gap: 0.5rem;
+    .card-front img {
+        transform: scale(2.3);
+        object-position: center 30%;
     }
 
-    .card {
-        width: calc(100% - (var(--mobile-margin) * 2));
-        height: 350px;
-        margin: 0.2rem;
-    }
-
-    nav h1 {
-        font-size: 1.8rem;
-    }
-
-    .main-subtitle {
-        font-size: 1.1rem;
-        padding: 0 1rem;
-    }
-    
-    .main-subtitle:first-of-type {
-        margin: 1.2rem auto 1rem;
-    }
-    
-    .main-subtitle:nth-of-type(2) {
-        margin-bottom: 0.3rem;
-    }
-    
-    .main-subtitle:last-of-type {
-        margin-bottom: 1.5rem;
-    }
-
-    nav h2 {
-        font-size: 0.9rem;
-    }
-
-    .footer-content p {
-        font-size: 1rem;
+    .card:hover .card-front img {
+        transform: scale(2.5);
     }
 
     .card h2 {
-        font-size: 1.8rem;
-        padding: 1rem 0.6rem 0.3rem;
-        letter-spacing: -0.5px;
-    }
-
-    .card-back img {
-        height: 100%;
+        font-size: 2.8rem;
+        padding: 1.5rem 1.2rem 0.8rem;
+        letter-spacing: -1.5px;
+        line-height: 0.9;
     }
 
     .contribution {
-        font-size: 0.75rem;
-        padding: 0.5rem;
+        font-size: 0.85rem;
+        padding: 0.6rem;
+    }
+
+    .logotype {
+        width: 15%;
+    }
+
+    .footer-content p {
+        font-size: 0.9rem;
     }
 } 
