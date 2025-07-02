@@ -1,0 +1,205 @@
+* {   /* Elimina márgenes y rellenos por defecto en todos los elementos, y mejora el control del tamaño usando border-box*/
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}  
+
+.aasc-page {
+  /* min-height: 100vh; Ocupa toda la ventana del navegador */
+  background-image: url('files/background-body.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 4rem; /* separación arriba */
+  position: relative;
+}
+
+.aasc-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 60, 80, 0.32); /* azul oscuro translúcido */
+  z-index: 0;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.aasc-page > *:not(.aasc-leyenda) {
+  position: relative;
+  z-index: 1;
+}
+
+.aasc-leyenda-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.aasc-leyenda {
+  font-size: 0.85rem;
+  color: #fff;
+  background: #FF4700;
+  font-family: 'Poppins', 'Arial', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-style: italic;
+  text-align: right;
+  margin-right: 2vw;
+  padding: 0.4em 1.2em;
+  border-radius: 0.5em;
+  pointer-events: none;
+}
+
+
+/* - - - Bloque cita y Subtitulo - - - */
+
+.aasc-main-subtitle {
+  /* margin-top: 4rem; */
+  margin: 2rem auto;
+  padding: 1.2rem 2vw;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  max-width: 700px;
+  width: 100%;
+  background: #81bbcd;
+  font-family: Georgia, serif;
+  border-radius: 8px;
+  color: rgb(255, 255, 255);
+}
+
+.aasc-quote {  /*Cita destacada con fondo azul, línea vertical izquierda y estilo cursiva+negrita*/
+  background: #81bbcd;
+  text-align: center;
+  border-left: 4px solid #035f69; /*línea izquierda cita*/
+  margin: 1.5em 10px;
+  padding: 1em 20px;
+  color: #035f69;
+  font-family: Georgia, serif;
+  text-shadow: none;
+  font-style: italic;/* para enfatizar cursiva*/
+  font-weight: bold;
+}
+
+/* - - -Tarjetas - - -  */
+
+.aasc-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 1vw;
+  justify-items: stretch;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.aasc-card {
+  width: 100%;
+  max-width: 340px;
+  min-width: 0;
+  height: 420px;
+  margin: 0 auto;
+  perspective: 1000px;
+}
+
+.aasc-card-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.aasc-card:hover .aasc-card-content { /*efecto "volteo en 3D" al pasar el ratón*/
+  transform: rotateY(180deg);
+}
+
+.aasc-card-front,
+.aasc-card-extra {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.aasc-card-front {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.aasc-card-front img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.aasc-card-front h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  color:#153437
+}
+
+.aasc-card-extra {
+  background-color: #f2f6f7;
+  transform: rotateY(180deg);
+  padding: 1rem;
+  overflow-y: auto; /*desplazamiento con scroll vertical*/
+  scrollbar-color: #81bbcd #bcdfe8; /*color barra que se desliza y despues la de fondo del scroll*/
+  scrollbar-width: thin;/*ancho*/
+}
+
+
+.aasc-card-extra img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.aasc-card-text h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color:#153437;
+}
+
+.aasc-card-text p {
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  text-align: justify;
+  color:rgba(0, 0, 1, 0.5)
+}
+
+
+
+@media (max-width: 768px) {
+  .aasc-cards-container {
+    grid-template-columns: 1fr; /*cambia de 2 a una carta por fila*/
+  }
+
+  .aasc-card {
+    width: 90%;
+    height: 450px;
+  }
+
+  .aasc-main-subtitle h2 {
+    font-size: 1.2rem;
+  }
+
+
+}
+
