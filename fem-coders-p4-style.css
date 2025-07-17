@@ -50,6 +50,7 @@
 @media screen and (max-width: 600px){
     .orr-intro {
     padding: 0 2.5rem;
+    padding-top: 2rem;
   }}
 
 
@@ -192,6 +193,179 @@ button {
 
 }
 
+/* - - - Camila - - - */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+.mca-page{
+  background-color: #f5f5f7;
+}
+.mca-science-section p{
+  font-size: 18px;
+  font-family: 'Quicksand', sans-serif; 
+  padding: 2%;
+  text-align: center;
+  color: black;
+}
+
+.mca-science-section .mca-texto-frontal {
+  font-size: 18px;
+  font-family: "Quicksand", sans-serif; 
+}
+
+.mca-science-section h1 {
+  font-family: "Quicksand", sans-serif; 
+  font-weight: 700;
+  font-weight: bolder;
+  color: black;
+}
+.mca-science-section a{
+  color:black
+}
+
+.mca-line{
+  height: 2px;
+  margin-bottom: 50px;
+  background: linear-gradient(to right, rgb(121, 70, 121), #e8e8e9);
+}
+
+.mca-science-section h2 {
+  font-family: "Quicksand", sans-serif; 
+  text-align: center;
+  font-weight: bold;
+  padding-inline: 10px;
+  color: black;
+  
+}
+.mca-titulo h1{
+  font-family: 'Playfair Display', serif;
+  display: flex;
+  justify-content: center;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.mca-science-section .mca-texto-titulo p{
+  font-size: 35px;
+  font-family: "Quicksand", sans-serif; 
+  justify-content: center;
+  line-height: 1.6;
+  margin-top: 5rem;
+}
+
+
+.mca-science-section{
+  background-color: #f5f5f7;
+  height: auto;
+  padding: 2rem;
+}
+
+.mca-card-container, 
+.mca-science-section{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+  height: auto;
+  
+}
+
+.mca-card-container .mca-card-item {
+  perspective: 500px;
+  width: 265px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 10px 10px 9px rgba(0, 0, 0, 0.15);
+
+}
+
+.mca-card-inner{
+  position: relative;
+  width: 100%;
+  transition: transform 1.8s;
+  transform-style: preserve-3d;
+  border-radius: 10%;
+
+}
+
+.mca-card-item:hover .mca-card-inner {
+  transform: rotateY(180deg);
+}
+
+.mca-front-card, .mca-back-card {
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  height: 500px;
+  border-radius: 10%;
+}
+
+.mca-front-card {
+  background-color: #fff;
+  overflow: hidden;
+  border-radius:10px;
+}
+
+.mca-back-card {
+  background-color: #fff;
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  border-radius:10px;
+}
+
+.mca-fotos-invento{
+  width: 100%;
+  height: 200px;
+  object-fit:cover;
+  margin: 0 auto;
+  padding: 0%;
+}
+
+.mca-fotos-mujer{
+  width: 100%;
+  height: 200px;
+  object-fit:cover;
+  margin: 0 auto;
+  padding: 0%;
+  object-position: top;
+
+}
+.mca-introduction {
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width:600px) {
+  .mca-front-card, .mca-back-card {
+    font-size: 50%;
+  }
+  p {
+  font-size: 12px;
+  }
+  .mca-fotos-mujer{
+  height: 30%;
+}
+.mca-fotos-invento{
+  width: 100%;
+  height: 50%;
+}
+.mca-texto-frontal {
+  font-size: 13px;
+}
+
+.mca-science-section  h2{
+  font-size: 1.5rem;
+}
+
+.mca-back-card h2{
+  font-size: 2rem;
+}
+
+}
 
 
 /* - - - Aday - - - */
@@ -237,14 +411,13 @@ button {
   font-weight: bold;
   max-width: 700px;
   width: 100%;
-  background: #81bbcd;
-  font-family: Georgia, serif;
+  background: #aacad49c;
+    font-family: Georgia, serif;
   border-radius: 8px;
   color: rgb(255, 255, 255);
 }
 
 .aasc-quote {  /*Cita destacada con fondo azul, línea vertical izquierda y estilo cursiva+negrita*/
-  background: #81bbcd;
   text-align: center;
   border-left: 4px solid #035f69; /*línea izquierda cita*/
   margin: 1.5em 10px;
@@ -261,16 +434,15 @@ button {
 .aasc-cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem 1vw;
-  justify-items: stretch;
+  gap: 0.5rem;
+  padding: 2rem;
   width: 100%;
   box-sizing: border-box;
 }
 
 .aasc-card {
   width: 100%;
-  max-width: 340px;
+  max-width: 300px;
   min-width: 0;
   height: 420px;
   margin: 0 auto;

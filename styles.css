@@ -439,6 +439,11 @@ footer {
     .footer-content p {
         font-size: 0.9rem;
     }
+
+    .leyenda-container{ 
+        justify-content: center;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -449,4 +454,9 @@ footer {
         box-sizing: border-box;
         overflow-x: hidden;
     }
+
+    .leyenda-container{ 
+        justify-content: center;
+    }
+
 } 
