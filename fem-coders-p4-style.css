@@ -529,6 +529,10 @@ button {
 @media (max-width: 768px) {
   .aasc-cards-container {
     grid-template-columns: 1fr; /*cambia de 2 a una carta por fila*/
+    width: 100vw;
+    padding: 0 2vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .aasc-card {

@@ -404,6 +404,9 @@ footer {
 
 /* Móviles pequeños (hasta 575px) */
 @media (max-width: 575px) {
+    .nav-title h1{
+      font-size:1.5rem;
+    }
     :root {
         --container-padding: var(--mobile-margin);
         --card-width: min(280px, 90vw);
@@ -447,13 +450,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .aasc-cards-container {
-        grid-template-columns: 1fr;
-        width: 100vw;
-        padding: 0 2vw;
-        box-sizing: border-box;
-        overflow-x: hidden;
-    }
 
     .leyenda-container{ 
         justify-content: center;
