@@ -4,6 +4,197 @@
   padding: 0;
 }  
 
+
+
+/* - - - Olga - - - */
+.orr-page{
+  background-color: rgb(65, 84, 144);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  color: rgba(249, 249, 237, 1);
+  margin: 0;
+  padding: 0;
+
+}
+
+/* MAIN */
+
+.orr-intro {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 1rem;
+    padding-top: 4rem;
+}
+
+
+.orr-main {
+  display:grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px){
+  .orr-main {
+    grid-template-columns: 1fr 1fr;
+  }}
+@media screen and (max-width: 600px){
+    .orr-intro {
+    padding: 0 2.5rem;
+  }}
+
+
+.orr-title {
+  text-align: center;
+  color: rgba(249, 249, 237, 1);
+  font-family: "Playfair Display", serif;
+  font-size: 38px;
+  font-weight: 400;
+  position: relative;
+  line-height: 1.2;
+}
+
+.orr-subtitle {
+  text-align: center;
+  color: rgba(249, 249, 237, 1);
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  position: relative;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+/* TARJETAS */
+
+.orr-card {
+  perspective: 1000px;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.orr-card-inner { /* su única función es como contenedor que se voltea */
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  min-height: 220px;
+  height: 100%;
+}
+
+.orr-card-front,
+.orr-card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 1rem;
+  gap: 1rem;
+  align-items: center;
+  background-color: rgba(249, 249, 237, 1);
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+
+.orr-card-back {
+  transform: rotateY(180deg); /* Ya está volteada desde el inicio */
+}
+
+.orr-card:hover .orr-card-inner {
+  transform: rotateY(180deg);
+}
+
+.orr-card-image {
+  margin:0;
+  text-align: center;
+}
+
+.orr-card-image img {
+  max-width: 162px;
+  height: 150px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.orr-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.orr-card-title {
+  font-family: "Playfair Display", serif;
+  color: rgb(65, 84, 144);
+  font-size: 14px;
+  margin-bottom: 0.5rem;
+}
+
+.orr-card-description {
+  font-family: "Inter", sans-serif;
+  color: rgba(125, 132, 178, 1);
+  font-size: 15px;
+  margin: 0 0 1rem 0;
+}
+
+.orr-scientist-name {
+    font-family: "Playfair Display", serif;
+    color: rgb(65, 84, 144);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.orr-scientist-profession {
+    font-family: "Inter", sans-serif;
+    color: rgba(125, 132, 178, 1);
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 0 0.5rem 0;
+}
+
+.orr-scientist-dates {
+    font-family: "Inter", sans-serif;
+    color: rgba(125, 132, 178, 1);
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+    margin: 0 0 1rem 0;
+}
+
+/* BOTONES */
+button {
+    background-color: rgba(191, 235, 95, 1);
+    color: rgba(45, 49, 76, 1);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    align-self: flex-start;
+    white-space: nowrap;
+    margin: 0 auto;
+
+}
+
+
+
+/* - - - Aday - - - */
 .aasc-page {
   /* min-height: 100vh; Ocupa toda la ventana del navegador */
   background-image: url('files/background-body.jpg');
@@ -32,29 +223,6 @@
 .aasc-page > *:not(.aasc-leyenda) {
   position: relative;
   z-index: 1;
-}
-
-.aasc-leyenda-container {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.aasc-leyenda {
-  font-size: 0.85rem;
-  color: #fff;
-  background: #FF4700;
-  font-family: 'Poppins', 'Arial', sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  font-style: italic;
-  text-align: right;
-  margin-right: 2vw;
-  padding: 0.4em 1.2em;
-  border-radius: 0.5em;
-  pointer-events: none;
 }
 
 
