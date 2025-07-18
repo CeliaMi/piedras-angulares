@@ -342,9 +342,10 @@ button {
 @media (max-width:600px) {
   .mca-front-card, .mca-back-card {
     font-size: 50%;
+
   }
   p {
-  font-size: 12px;
+  font-size: 1rem;
   }
   .mca-fotos-mujer{
   height: 30%;
@@ -354,11 +355,11 @@ button {
   height: 50%;
 }
 .mca-texto-frontal {
-  font-size: 13px;
+  font-size: 1rem;
 }
 
 .mca-science-section  h2{
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .mca-back-card h2{
